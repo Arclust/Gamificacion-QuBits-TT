@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dnyqpidhaab3d"]
 
 [ext_resource type="Script" uid="uid://6vprjfgvcgd8" path="res://Scripts/pick_up.gd" id="1_vjksl"]
-[ext_resource type="Resource" uid="uid://bppty45i2xfu" path="res://Items/input.tres" id="2_bss85"]
+[ext_resource type="Resource" uid="uid://1nnp2skai1ai" path="res://Items/qbit.tres" id="2_bss85"]
 [ext_resource type="Script" uid="uid://fybm6c5n2tb5" path="res://Classes/slot_class.gd" id="3_p0lej"]
 
 [sub_resource type="Resource" id="Resource_lgfxx"]
