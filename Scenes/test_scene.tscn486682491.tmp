@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8bmrn7mf8pn"]
+
+[ext_resource type="Script" uid="uid://2kmlpglioqr2" path="res://Scenes/test_scene.gd" id="1_hb2xm"]
+[ext_resource type="PackedScene" uid="uid://bh4g6ynhg30vi" path="res://Scenes/player.tscn" id="2_50ct6"]
+[ext_resource type="PackedScene" uid="uid://cicgm5rq2v47f" path="res://Scenes/hud.tscn" id="2_hb2xm"]
+[ext_resource type="PackedScene" uid="uid://drfm7nh7usujm" path="res://Scenes/inventory.tscn" id="3_ak5v8"]
+
+[sub_resource type="Environment" id="Environment_50ct6"]
+background_mode = 1
+background_color = Color(0, 0.0145926, 0.0776698, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.252027, 0.252028, 0.252027, 1)
+ambient_light_energy = 16.0
+
+[sub_resource type="VoxelStreamMemory" id="VoxelStreamMemory_3dogw"]
+
+[sub_resource type="VoxelGeneratorFlat" id="VoxelGeneratorFlat_3dogw"]
+
+[sub_resource type="VoxelMesherTransvoxel" id="VoxelMesherTransvoxel_3dogw"]
+edge_clamp_margin = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dogw"]
+albedo_color = Color(0.112355, 0.0441586, 0.157021, 1)
+metallic = 0.55
+roughness = 0.0
+
+[node name="TestScene" type="Node"]
+script = ExtResource("1_hb2xm")
+
+[node name="player" parent="." instance=ExtResource("2_50ct6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.866598, 0.161908)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_50ct6")
+
+[node name="VoxelLodTerrain" type="VoxelLodTerrain" parent="." groups=["Suelo"]]
+stream = SubResource("VoxelStreamMemory_3dogw")
+generator = SubResource("VoxelGeneratorFlat_3dogw")
+mesher = SubResource("VoxelMesherTransvoxel_3dogw")
+gi_mode = 1
+material = SubResource("StandardMaterial3D_3dogw")
+
+[node name="HUD" parent="." instance=ExtResource("2_hb2xm")]
+
+[node name="Inventory" parent="." instance=ExtResource("3_ak5v8")]

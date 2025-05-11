@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8a5ntai1xfvn"]
+
+[ext_resource type="Script" uid="uid://ccaud4wsl0nk2" path="res://Scripts/input.gd" id="1_nnn5i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7brft"]
+albedo_color = Color(1.68458e-07, 0.274688, 0.393144, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wp72f"]
+material = SubResource("StandardMaterial3D_7brft")
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7brft"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nnn5i"]
+resource_local_to_scene = true
+size = Vector3(0.6, 0.6, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wp72f"]
+resource_local_to_scene = true
+size = Vector3(0.6, 0.6, 0.2)
+
+[node name="Input" type="StaticBody3D" groups=["Input"]]
+script = ExtResource("1_nnn5i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wp72f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_7brft")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_nnn5i")
+
+[node name="Entradas" type="Node3D" parent="."]
+
+[node name="EntradaX+" type="Area3D" parent="Entradas" groups=["EntradaTubo"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entradas/EntradaX+"]
+shape = SubResource("BoxShape3D_wp72f")
+
+[node name="InfoLabel" type="Label3D" parent="Entradas/EntradaX+"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.05)
+text = "QBits Almacenados"
+font_size = 18
+outline_size = 6
+
+[node name="QbitsLabel" type="Label3D" parent="Entradas/EntradaX+"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.05)
+font_size = 18
+outline_size = 6
+
+[node name="EntradaX-" type="Area3D" parent="Entradas" groups=["EntradaTubo"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entradas/EntradaX-"]
+shape = SubResource("BoxShape3D_wp72f")
+
+[node name="InfoLabel" type="Label3D" parent="Entradas/EntradaX-"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -0.05)
+text = "QBits Almacenados"
+font_size = 18
+outline_size = 6
+
+[node name="QbitsLabel" type="Label3D" parent="Entradas/EntradaX-"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.8, -0.05)
+font_size = 18
+outline_size = 6

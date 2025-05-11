@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh4g6ynhg30vi"]
+
+[ext_resource type="Script" uid="uid://dxxjdw3uayhvd" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="Resource" uid="uid://yoafwr314hwf" path="res://Items/player_inv.tres" id="2_vgqql"]
+[ext_resource type="Resource" uid="uid://cdsat1eb4os6h" path="res://Items/player_hotbar.tres" id="3_6t5aa"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_f60y1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v0iea"]
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+collision_layer = 2
+script = ExtResource("1_v0iea")
+InventarioItems = ExtResource("2_vgqql")
+HotbarItems = ExtResource("3_6t5aa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
+mesh = SubResource("CapsuleMesh_f60y1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_v0iea")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -10)
+hit_back_faces = false
+collide_with_areas = true
+
+[node name="VoxelViewer" type="VoxelViewer" parent="."]
+
+[node name="PlacementTimer" type="Timer" parent="."]

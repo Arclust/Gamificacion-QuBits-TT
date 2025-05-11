@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemDataQBit" load_steps=3 format=3 uid="uid://1nnp2skai1ai"]
+
+[ext_resource type="Script" uid="uid://bv7h0kuol5upd" path="res://Classes/qbit_item_data.gd" id="1_7c07t"]
+[ext_resource type="Texture2D" uid="uid://bdaqctax8ydfu" path="res://Textures/Mana.png" id="2_hci72"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_7c07t")
+qbits = Array[bool]([false, true, false])
+name = "Qbit"
+description = ""
+stackable = true
+texture = ExtResource("2_hci72")
+metadata/_custom_type_script = "uid://bv7h0kuol5upd"
