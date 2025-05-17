@@ -6,7 +6,7 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_7c07t")
-qbits = Array[String](["1", "0"])
+qbits = Array[String]([])
 name = "Qbit"
 description = ""
 stackable = true
