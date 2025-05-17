@@ -6,7 +6,11 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_7c07t")
+<<<<<<< Updated upstream
 qbits = Array[bool]([])
+=======
+qbits = Array[bool]([false])
+>>>>>>> Stashed changes
 name = "Qbit"
 description = ""
 stackable = true

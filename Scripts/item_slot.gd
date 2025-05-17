@@ -11,8 +11,13 @@ func set_slot_data(slot_data: SlotData) -> void:
 	var item_data = slot_data.item_data
 	texture_rect.texture = item_data.texture
 	if item_data is ItemDataQBit:
+		var valor
+		if item_data.qbits:
+			valor = 1
+		else:
+			valor = 0 
 		
-		item_data.description = str(item_data.qbits)
+		item_data.description = "Estado: " + str(valor)
 	tooltip_text = "%s\n%s" % [item_data.name, item_data.description]
 	
 	if slot_data.quantity > 1:
