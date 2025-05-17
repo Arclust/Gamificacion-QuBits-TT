@@ -31,10 +31,10 @@ func _ready() -> void:
 	
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and !VisibleCursor:
-		head.rotate_y(-event.relative.x * SENSIBILITY)
-		camera.rotate_x(-event.relative.y * SENSIBILITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(60))
+	#if event is InputEventMouseMotion and !VisibleCursor:
+		#head.rotate_y(-event.relative.x * SENSIBILITY)
+		#camera.rotate_x(-event.relative.y * SENSIBILITY)
+		#camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(60))
 	if Input.is_action_just_pressed("tab"):
 		toggle_inventory.emit()
 
@@ -55,14 +55,14 @@ func _physics_process(delta: float) -> void:
 
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
-		var input_dir = Input.get_vector("left", "right", "up", "down")
-		var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		if direction:
-			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-			velocity.z = move_toward(velocity.z, 0, SPEED)
+		#var input_dir = Input.get_vector("left", "right", "up", "down")
+		#var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		#if direction:
+			#velocity.x = direction.x * SPEED
+			#velocity.z = direction.z * SPEED
+		#else:
+			#velocity.x = move_toward(velocity.x, 0, SPEED)
+			#velocity.z = move_toward(velocity.z, 0, SPEED)
 			
 		if Input.is_action_pressed("sprint"):
 			SPEED = 25
@@ -71,11 +71,11 @@ func _physics_process(delta: float) -> void:
 		
 		move_and_slide()
 		
-		target_pos = raycast_3D.get_collision_point()
-		normal_colision = raycast_3D.get_collision_normal()
-		collider = raycast_3D.get_collider()
-		if not raycast_3D.is_colliding():
-			target_pos = raycast_3D.global_position-raycast_3D.global_basis.z*5
+		#target_pos = raycast_3D.get_collision_point()
+		#normal_colision = raycast_3D.get_collision_normal()
+		#collider = raycast_3D.get_collider()
+		#if not raycast_3D.is_colliding():
+			#target_pos = raycast_3D.global_position-raycast_3D.global_basis.z*5
 
 			
 		if Input.is_action_just_pressed("right_click"):
@@ -100,51 +100,9 @@ func _physics_process(delta: float) -> void:
 					#Agregar_Qbit([1],3)
 					#collider.get_parent().get_parent().Disminuir_Qbit([1],3)
 				
-		if Input.is_action_pressed("left_click") and raycast_3D.is_colliding() and collider.is_in_group("Suelo"):
-			pass
-			
-			
+		#if Input.is_action_pressed("left_click") and raycast_3D.is_colliding() and collider.is_in_group("Suelo"):
+			#pass
 
-#func Contar_Qbits(valores_filtro):
-	#for objeto in InventarioQbits:
-		#if objeto.valores == valores_filtro:
-			#return objeto.cant
-	#return 0
-
-
-#
-#func Existe_Qbit(valores_filtro) -> bool:
-	#for objeto in InventarioQbits:
-		#if objeto.valores == valores_filtro:
-			#return true
-	#return false
-	#
-	#
-	#
-#func Agregar_Qbit(valores_filtro, cantidad_agre) -> void:
-	#if Existe_Qbit(valores_filtro):
-		#for objeto in InventarioQbits:
-			#if objeto.valores == valores_filtro:
-				#objeto.cant += cantidad_agre
-				#return
-	#else:
-			#var NuevoQbit = Qbit.new(1,valores_filtro,cantidad_agre)
-			#InventarioQbits.append(NuevoQbit)
-			#return
-	#
-	#
-	#
-#func Disminuir_Qbit(valores_filtro, cantidad_dism) -> void:
-	#var i = 0
-	#for objeto in InventarioQbits:
-		#if objeto.valores == valores_filtro:
-			#if objeto.cant > cantidad_dism:
-				#objeto.cant -= cantidad_dism
-				#return
-			#else:
-				#InventarioQbits.remove_at(i)
-				#return
-		#i += 1
 
 func Interact() -> void:
 	if raycast_3D.is_colliding() and raycast_3D.get_collider().is_in_group("InventarioExterno"):
