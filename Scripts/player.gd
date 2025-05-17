@@ -11,7 +11,6 @@ const SENSIBILITY = 0.005
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var voxel_lod_terrain = $"../VoxelLodTerrain"
-@onready var voxel_tool = voxel_lod_terrain.get_voxel_tool()
 @onready var raycast_3D = $Head/Camera3D/RayCast3D
 @onready var Conectando = false
 @onready var TubeInit
@@ -102,8 +101,7 @@ func _physics_process(delta: float) -> void:
 					#collider.get_parent().get_parent().Disminuir_Qbit([1],3)
 				
 		if Input.is_action_pressed("left_click") and raycast_3D.is_colliding() and collider.is_in_group("Suelo"):
-			voxel_tool.mode = VoxelTool.MODE_REMOVE
-			voxel_tool.grow_sphere(target_pos,2,2)
+			pass
 			
 			
 
