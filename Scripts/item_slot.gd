@@ -17,7 +17,7 @@ func set_slot_data(slot_data: SlotData) -> void:
 		else:
 			valor = 0 
 		
-		item_data.description = "Estado: " + str(valor)
+		item_data.description = 'Matriz: ' + str(item_data.qbits)
 	tooltip_text = "%s\n%s" % [item_data.name, item_data.description]
 	
 	if slot_data.quantity > 1:

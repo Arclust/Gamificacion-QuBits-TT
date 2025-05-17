@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Automation"
+config/name="Gamificacion QuBits PTT"
 run/main_scene="uid://b8bmrn7mf8pn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"

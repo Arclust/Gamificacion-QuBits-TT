@@ -32,6 +32,4 @@ target_position = Vector3(0, 0, -10)
 hit_back_faces = false
 collide_with_areas = true
 
-[node name="VoxelViewer" type="VoxelViewer" parent="."]
-
 [node name="PlacementTimer" type="Timer" parent="."]

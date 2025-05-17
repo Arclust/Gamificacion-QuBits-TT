@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b8bmrn7mf8pn"]
+[gd_scene load_steps=16 format=3 uid="uid://b8bmrn7mf8pn"]
 
 [ext_resource type="Script" uid="uid://2kmlpglioqr2" path="res://Classes/test_scene.gd" id="1_hb2xm"]
 [ext_resource type="PackedScene" uid="uid://bh4g6ynhg30vi" path="res://Scenes/player.tscn" id="2_50ct6"]
@@ -18,22 +18,6 @@ ssao_enabled = true
 ssao_radius = 16.0
 volumetric_fog_density = 0.0152
 
-[sub_resource type="VoxelStreamMemory" id="VoxelStreamMemory_3dogw"]
-
-[sub_resource type="VoxelGeneratorWaves" id="VoxelGeneratorWaves_ibmi3"]
-height_start = -30.0
-pattern_size = Vector2(300, 300)
-pattern_offset = Vector2(0, 100)
-
-[sub_resource type="VoxelMesherTransvoxel" id="VoxelMesherTransvoxel_3dogw"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dogw"]
-disable_ambient_light = true
-disable_fog = true
-albedo_color = Color(0.207554, 0.574167, 0.48001, 1)
-metallic = 0.55
-roughness = 0.0
-
 [sub_resource type="Resource" id="Resource_tnimv"]
 resource_local_to_scene = true
 script = ExtResource("4_bwjpn")
@@ -46,6 +30,12 @@ script = ExtResource("4_bwjpn")
 slot_datas = Array[ExtResource("5_ibmi3")]([null, null, null, null])
 metadata/_custom_type_script = "uid://bnucw5tjhwlm1"
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yglu3"]
+size = Vector3(20, 0.1, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bwjpn"]
+size = Vector3(20, 0.1, 20)
+
 [node name="TestScene" type="Node"]
 script = ExtResource("1_hb2xm")
 
@@ -54,12 +44,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.866598, 0.161908)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_50ct6")
-
-[node name="VoxelLodTerrain" type="VoxelLodTerrain" parent="." groups=["Suelo"]]
-stream = SubResource("VoxelStreamMemory_3dogw")
-generator = SubResource("VoxelGeneratorWaves_ibmi3")
-mesher = SubResource("VoxelMesherTransvoxel_3dogw")
-material = SubResource("StandardMaterial3D_3dogw")
 
 [node name="ItemVault2" parent="." instance=ExtResource("7_rdbpf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.08972, 0.1, -4.28677)
@@ -127,6 +111,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55835, 2.15876, -7.19961)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.13881, 0.990319, 0, -0.990319, 0.13881, 0, 5.6953, 0)
 directional_shadow_mode = 0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_yglu3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_bwjpn")
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
