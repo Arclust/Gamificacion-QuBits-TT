@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemDataPlaceable" load_steps=4 format=3 uid="uid://ck3m70yox7iev"]
+
+[ext_resource type="Script" uid="uid://ctf30e2fnc0g7" path="res://Classes/placeable_item_data.gd" id="1_chgo6"]
+[ext_resource type="PackedScene" uid="uid://5milh3oqc0ub" path="res://Scenes/z_gate.tscn" id="2_chgo6"]
+[ext_resource type="Texture2D" uid="uid://gi4ijx0cvnj" path="res://Textures/ZGate.png" id="3_4r18f"]
+
+[resource]
+script = ExtResource("1_chgo6")
+structure = ExtResource("2_chgo6")
+name = "ZGate"
+description = ""
+stackable = true
+texture = ExtResource("3_4r18f")
+metadata/_custom_type_script = "uid://ctf30e2fnc0g7"

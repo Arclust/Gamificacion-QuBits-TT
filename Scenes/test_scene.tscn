@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dvtudpo17cbfh" path="res://Scenes/slot.tscn" id="6_x033f"]
 [ext_resource type="PackedScene" uid="uid://yg83m4ywaoti" path="res://Scenes/hot_bar_inventory.tscn" id="7_d3awe"]
 [ext_resource type="PackedScene" uid="uid://b6gd0gtqkj6qf" path="res://Scenes/item_vault.tscn" id="7_rdbpf"]
-[ext_resource type="PackedScene" uid="uid://dnyqpidhaab3d" path="res://Scenes/pick_up.tscn" id="8_oho3u"]
 
 [sub_resource type="Environment" id="Environment_50ct6"]
 background_mode = 1
@@ -19,6 +18,12 @@ ssao_radius = 16.0
 volumetric_fog_density = 0.0152
 
 [sub_resource type="Resource" id="Resource_tnimv"]
+resource_local_to_scene = true
+script = ExtResource("4_bwjpn")
+slot_datas = Array[ExtResource("5_ibmi3")]([null, null, null, null])
+metadata/_custom_type_script = "uid://bnucw5tjhwlm1"
+
+[sub_resource type="Resource" id="Resource_d3awe"]
 resource_local_to_scene = true
 script = ExtResource("4_bwjpn")
 slot_datas = Array[ExtResource("5_ibmi3")]([null, null, null, null])
@@ -45,9 +50,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.866598, 0.161908)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_50ct6")
 
+[node name="ItemVault3" parent="." instance=ExtResource("7_rdbpf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.32562, 0.2, 0.313114)
+inventory_data = SubResource("Resource_tnimv")
+
 [node name="ItemVault2" parent="." instance=ExtResource("7_rdbpf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.08972, 0.1, -4.28677)
-inventory_data = SubResource("Resource_tnimv")
+inventory_data = SubResource("Resource_d3awe")
 
 [node name="ItemVault" parent="." instance=ExtResource("7_rdbpf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36561, 0.2, -8.57354)
@@ -104,9 +113,6 @@ modulate = Color(1, 1, 1, 0.211765)
 layout_mode = 2
 offset_right = 64.0
 offset_bottom = 64.0
-
-[node name="PickUp" parent="UI" instance=ExtResource("8_oho3u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55835, 2.15876, -7.19961)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.13881, 0.990319, 0, -0.990319, 0.13881, 0, 5.6953, 0)
