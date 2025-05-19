@@ -11,13 +11,12 @@ func set_slot_data(slot_data: SlotData) -> void:
 	var item_data = slot_data.item_data
 	texture_rect.texture = item_data.texture
 	if item_data is ItemDataQBit:
-		var valor
-		if item_data.qbits:
-			valor = 1
-		else:
-			valor = 0 
-		
-		item_data.description = 'Matriz: ' + str(item_data.qbits)
+		var prob_cero
+		var prob_uno 
+		prob_cero = floor(pow(abs(float(item_data.qbits[0])),2) * 100)
+		prob_uno = floor(pow(abs(float(item_data.qbits[1])),2) * 100)
+
+		item_data.description = 'Matriz: ' + str(prob_cero) + '% y ' + str(prob_uno) + '%' 
 	tooltip_text = "%s\n%s" % [item_data.name, item_data.description]
 	
 	if slot_data.quantity > 1:
