@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://gi4ijx0cvnj" path="res://Textures/ZGate.png" id="3_4r18f"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_chgo6")
 structure = ExtResource("2_chgo6")
 name = "ZGate"

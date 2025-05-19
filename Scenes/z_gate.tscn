@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://fybm6c5n2tb5" path="res://Classes/slot_class.gd" id="3_p5yk0"]
 
 [sub_resource type="Resource" id="Resource_lndub"]
+resource_local_to_scene = true
 script = ExtResource("2_alhua")
 slot_datas = Array[ExtResource("3_p5yk0")]([null])
 metadata/_custom_type_script = "uid://bnucw5tjhwlm1"

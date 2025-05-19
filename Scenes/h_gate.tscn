@@ -1,18 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqolwg60wvdru"]
+[gd_scene load_steps=10 format=3 uid="uid://bxs4qvvpmss1h"]
 
-[ext_resource type="Script" uid="uid://bfkh8hcieayu4" path="res://Scripts/x_gate.gd" id="1_1svgs"]
-[ext_resource type="Script" uid="uid://bnucw5tjhwlm1" path="res://Classes/inventory_items.gd" id="2_o6v6b"]
-[ext_resource type="Script" uid="uid://fybm6c5n2tb5" path="res://Classes/slot_class.gd" id="3_pcoyr"]
+[ext_resource type="Script" uid="uid://csugu4sxabot7" path="res://Scripts/h_gate.gd" id="1_sgc6d"]
+[ext_resource type="Script" uid="uid://bnucw5tjhwlm1" path="res://Classes/inventory_items.gd" id="2_6m2lr"]
+[ext_resource type="Script" uid="uid://fybm6c5n2tb5" path="res://Classes/slot_class.gd" id="3_xxmu5"]
 
-[sub_resource type="Resource" id="Resource_o6v6b"]
+[sub_resource type="Resource" id="Resource_iiteh"]
 resource_local_to_scene = true
-script = ExtResource("2_o6v6b")
-slot_datas = Array[ExtResource("3_pcoyr")]([null])
+script = ExtResource("2_6m2lr")
+slot_datas = Array[ExtResource("3_xxmu5")]([null])
 metadata/_custom_type_script = "uid://bnucw5tjhwlm1"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7brft"]
 resource_local_to_scene = true
-albedo_color = Color(0.405362, 0.32399, 0, 1)
+albedo_color = Color(0.760784, 0, 0.215686, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wp72f"]
 material = SubResource("StandardMaterial3D_7brft")
@@ -27,9 +27,9 @@ size = Vector3(0.6, 0.6, 1.2)
 resource_local_to_scene = true
 size = Vector3(0.6, 0.6, 0.2)
 
-[node name="XGate" type="StaticBody3D" groups=["XGate"]]
-script = ExtResource("1_1svgs")
-inventory_data = SubResource("Resource_o6v6b")
+[node name="HGate" type="StaticBody3D" groups=["XGate"]]
+script = ExtResource("1_sgc6d")
+inventory_data = SubResource("Resource_iiteh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

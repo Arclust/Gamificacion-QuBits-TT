@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=13 format=3 uid="uid://yoafwr314hwf"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=15 format=3 uid="uid://yoafwr314hwf"]
 
 [ext_resource type="Script" uid="uid://fybm6c5n2tb5" path="res://Classes/slot_class.gd" id="2_ahtcy"]
 [ext_resource type="Resource" uid="uid://cx7ph0pf4byd7" path="res://Items/x_gate.tres" id="5_e3ktg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://sydu44m3oibu" path="res://Items/tube.tres" id="6_ocson"]
 [ext_resource type="Resource" uid="uid://1nnp2skai1ai" path="res://Items/qbit.tres" id="7_fkf7k"]
 [ext_resource type="Resource" uid="uid://ck3m70yox7iev" path="res://Items/z_gate.tres" id="7_xuacg"]
+[ext_resource type="Resource" uid="uid://hx4jnqtjxchd" path="res://Items/h_gate.tres" id="8_xuacg"]
 
 [sub_resource type="Resource" id="Resource_ocson"]
 script = ExtResource("2_ahtcy")
@@ -38,7 +39,13 @@ item_data = ExtResource("7_xuacg")
 quantity = 2
 metadata/_custom_type_script = "uid://fybm6c5n2tb5"
 
+[sub_resource type="Resource" id="Resource_x5tli"]
+script = ExtResource("2_ahtcy")
+item_data = ExtResource("8_xuacg")
+quantity = 10
+metadata/_custom_type_script = "uid://fybm6c5n2tb5"
+
 [resource]
 script = ExtResource("5_y5hib")
-slot_datas = Array[ExtResource("2_ahtcy")]([SubResource("Resource_ocson"), SubResource("Resource_fkf7k"), SubResource("Resource_xuacg"), SubResource("Resource_y5hib"), SubResource("Resource_0duj1"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+slot_datas = Array[ExtResource("2_ahtcy")]([SubResource("Resource_ocson"), SubResource("Resource_fkf7k"), SubResource("Resource_xuacg"), SubResource("Resource_y5hib"), SubResource("Resource_0duj1"), SubResource("Resource_x5tli"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://bnucw5tjhwlm1"
