@@ -110,6 +110,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55835, 2.15876, -7.19961)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.13881, 0.990319, 0, -0.990319, 0.13881, 0, 5.6953, 0)
+light_energy = 16.0
 directional_shadow_mode = 0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]

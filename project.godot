@@ -21,7 +21,6 @@ GlobalScript="*res://Scripts/global_script.gd"
 PlayerManager="*res://Scripts/player_manager.gd"
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
 XRToolsRumbleManager="*res://addons/godot-xr-tools/rumble/rumble_manager.gd"
-XrSimulator="*res://addons/xr-simulator/XRSimulator.tscn"
 
 [display]
 
@@ -114,7 +113,14 @@ interact={
 ]
 }
 
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
+anti_aliasing/screen_space_roughness_limiter/enabled=false
+vrs/mode=2
+
 [xr]
 
 openxr/enabled=true
+openxr/view_configuration=0
 shaders/enabled=true

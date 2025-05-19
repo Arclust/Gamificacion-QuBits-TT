@@ -5,9 +5,10 @@ const PickUp = preload("res://Scenes/pick_up.tscn")
 @onready var player: CharacterBody3D = $player
 @onready var inventory_interface: Control = $UI/InventoryInterface
 @onready var hot_bar_inventory: PanelContainer = $UI/HotBarInventory
+var xr_interface: XRInterface
 
-
-func _ready() -> void:
+func _ready():
+	
 	player.toggle_inventory.connect(toggle_inventory_interface)
 	inventory_interface.set_player_inventory_data(player.InventarioItems)
 	hot_bar_inventory.set_inventory_data(player.InventarioItems)

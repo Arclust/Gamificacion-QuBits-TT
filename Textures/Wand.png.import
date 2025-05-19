@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsl466bbrjx4w"
 path.s3tc="res://.godot/imported/Wand.png-e6869fb8e9ba3e122855da4c8f8e0009.s3tc.ctex"
+path.etc2="res://.godot/imported/Wand.png-e6869fb8e9ba3e122855da4c8f8e0009.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/Wand.png"
-dest_files=["res://.godot/imported/Wand.png-e6869fb8e9ba3e122855da4c8f8e0009.s3tc.ctex"]
+dest_files=["res://.godot/imported/Wand.png-e6869fb8e9ba3e122855da4c8f8e0009.s3tc.ctex", "res://.godot/imported/Wand.png-e6869fb8e9ba3e122855da4c8f8e0009.etc2.ctex"]
 
 [params]
 
